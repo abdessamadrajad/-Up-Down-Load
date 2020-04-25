@@ -52,39 +52,45 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <AuthForm title="Sign in to your account" error={this.state.error}>
-        <Email
-          handleUpdate={this.handleUpdate}
-          email={this.state.email}
-          autoComplete="on"
-        />
-        <Password
-          handleUpdate={this.handleUpdate}
-          password={this.state.password}
-          autoComplete="on"
-        />
-        <p className="text-center">
-          Forgot your password? <Link to="/reset">Reset password</Link>
-        </p>
-        <button
-          onClick={e => this.login(e)}
-          type="submit"
-          className="btn btn-primary btn-block"
-          disabled={this.state.loading}
-        >
-          {this.state.loading ? null : 'Sign In'}
-          {this.state.loading && (
-            <span
-              className="spinner-border spinner-border-sm"
-              role="status"
-              aria-hidden="true"
+      <header>
+        <div className="back">
+          <AuthForm title="Sign in to your account" error={this.state.error}>
+            <Email
+              handleUpdate={this.handleUpdate}
+              email={this.state.email}
+              autoComplete="on"
             />
-          )}
-        </button>
-        <p style={{ marginTop: 40 }} className="text-center">
-          No account? <Link to="/signup">Create account</Link>
-        </p>
-      </AuthForm>
+            <Password
+              handleUpdate={this.handleUpdate}
+              password={this.state.password}
+              autoComplete="on"
+            />
+            <p className="text-center">
+              Forgot your password? <Link to="/reset">Reset password</Link>
+            </p>
+            <div>
+              <button
+                onClick={e => this.login(e)}
+                type="submit"
+                className="btn btn-primary btn-block"
+                disabled={this.state.loading}
+              >
+                {this.state.loading ? null : 'Sign In'}
+                {this.state.loading && (
+                  <span
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                )}
+              </button>
+            </div>
+            <p style={{ marginTop: 40 }} className="text-center">
+              No account? <Link to="/signup">Create account</Link>
+            </p>
+          </AuthForm>
+        </div>
+      </header>
     )
   }
 }

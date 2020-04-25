@@ -102,49 +102,53 @@ class SignUp extends React.Component {
   render() {
     if (this.state.stage === 0) {
       return (
-        <AuthForm title="Create a new account" error={this.state.error}>
-          <Email
-            handleUpdate={this.handleUpdate}
-            email={this.state.email}
-            autoComplete="off"
-          />
-          <Password
-            handleUpdate={this.handleUpdate}
-            password={this.state.password}
-            autoComplete="off"
-          />
-          <div className="form-group">
-            <label htmlFor="exampleInputPhoneNum1">Phone Number</label>
-            <NumberFormat
-              placeholder="+1 (###) ###-####"
-              onChange={this.handleUpdate}
-              name="phone_number"
-              value={this.state.phone_number}
-              type="tel"
-              className="form-control"
-              format="+1##########"
-              mask="_"
-            />
-          </div>
-          <button
-            onClick={e => this.signUp(e)}
-            type="submit"
-            className="btn btn-primary btn-block"
-            disabled={this.state.loading}
-          >
-            {this.state.loading ? null : 'Create Account'}
-            {this.state.loading && (
-              <span
-                className="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
+        <header>
+          <div className="back1">
+            <AuthForm title="Create a new account" error={this.state.error}>
+              <Email
+                handleUpdate={this.handleUpdate}
+                email={this.state.email}
+                autoComplete="off"
               />
-            )}
-          </button>
-          <p style={{ marginTop: 40 }} className="text-center">
-            Have an account? <Link to="/signin">Sign in</Link>
-          </p>
-        </AuthForm>
+              <Password
+                handleUpdate={this.handleUpdate}
+                password={this.state.password}
+                autoComplete="off"
+              />
+              <div className="form-group">
+                <label htmlFor="exampleInputPhoneNum1">Phone Number</label>
+                <NumberFormat
+                  placeholder="+1 (###) ###-####"
+                  onChange={this.handleUpdate}
+                  name="phone_number"
+                  value={this.state.phone_number}
+                  type="tel"
+                  className="form-control"
+                  format="+1##########"
+                  mask="_"
+                />
+              </div>
+              <button
+                onClick={e => this.signUp(e)}
+                type="submit"
+                className="btn btn-primary btn-block"
+                disabled={this.state.loading}
+              >
+                {this.state.loading ? null : 'Create Account'}
+                {this.state.loading && (
+                  <span
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                )}
+              </button>
+              <p style={{ marginTop: 40 }} className="text-center">
+                Have an account? <Link to="/signin">Sign in</Link>
+              </p>
+            </AuthForm>
+          </div>
+        </header>
       )
     }
     return (
