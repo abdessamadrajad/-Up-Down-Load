@@ -15,9 +15,9 @@ const IndexPage = () => {
       }}
     >
       <GatsbyIcon />
-      <p style={{ fontSize: 48, padding: 20 }}>+</p>
+      <p style={{ fontSize: 50, padding: 20 }}>+</p>
       <AmplifyIcon />
-      <p style={{ fontSize: 48, padding: 20 }}>+</p>
+      <p style={{ fontSize: 50, padding: 20 }}>+</p>
       <CognitoIcon />
     </div>
   )

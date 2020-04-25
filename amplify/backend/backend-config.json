@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"newauthsite68cf98bd": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
