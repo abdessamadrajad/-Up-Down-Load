@@ -37,7 +37,7 @@ class Home extends Component{
         <input type='file' onChange={this.handleChange}/>
         <img src={this.state.fileUrl} />
         <button onClick={this.saveFile}>save File</button>
-        <button onClick={this.listFile}>list File</button>
+        <button onClick={this.listFile}>list File !</button>
         </div>
     );
   }
